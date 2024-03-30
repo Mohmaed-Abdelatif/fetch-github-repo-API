@@ -11,11 +11,9 @@ function fetchRepos(){
     }else{
         fetch(`https://api.github.com/users/${myInput.value}/repos`)
         .then((res)=>{
-            // console.log(res.json());
             return res.json();
         })
         .then((data)=>{
-        console.log(data);
         reposData.innerHTML=""
         let i=1;
         data.forEach(repo => {
