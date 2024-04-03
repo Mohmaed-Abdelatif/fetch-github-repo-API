@@ -5,7 +5,7 @@ body{
     font-family: 'Courier New', Courier, monospace;
 }
 .repos-container{
-    width: 800px;
+    width: 90%;
     margin: auto;
 }
 .repos-container .get-repos{
@@ -13,6 +13,7 @@ background-color: #f6f6f6;
 display: flex;
 padding: 20px;
 }
+
 .repos-container .get-repos input{
     width: 100%;
     border: none;
@@ -35,7 +36,7 @@ padding: 20px;
     border-radius: 0 40px 40px 0;
 }
 .repos-container .show-data{
-    padding: 20px;
+    padding: 10px;
     background-color: #eee;
 }
 .show-data .repoBox{
@@ -48,21 +49,55 @@ padding: 20px;
 .show-data .repoBox:not(:last-child){
     margin-bottom: 5px;
 }
-.show-data .repoBox div{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 10px;
+
+.show-data .repoBox .name-container{
+    max-width:75%;
+    display:flex;
+    flex-wrap:wrap;
 }
-.show-data .repoBox a,span{
+.show-data .repoBox .data-container{
+    display:flex;
+    justify-content:space-between;
+    gap:10px;
+}
+
+.show-data .repoBox .link{
     color: black;
-    text-align: center;
-    border-radius: 4px;
-}
-.show-data .repoBox a{
     text-decoration: none;
     background-color: #845ec2;
+    border-radius: 4px;
+    font-size:16px;
 }
-.show-data .repoBox span{
+.show-data .repoBox .star-count{
     background-color: #d5cabd;
+    border-radius: 4px;
+    font-size:16px;
+}
+
+@media(max-width:766px){
+    .repos-container .get-repos{
+        padding: 10px;
+    }
+    .repos-container .show-data{
+        padding: 5px;
+    }
+    .show-data .repoBox{
+        padding: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .show-data .repoBox .data-container{
+        flex-direction: column;
+        gap:10px;
+    }
+    .show-data .repoBox .link{
+        font-size:14px;
+    }
+    .show-data .repoBox .star-count{
+        font-size:14px;
+    }
+    html{
+        font-size:12px;
+    }
 }
